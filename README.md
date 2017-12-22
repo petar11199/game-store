@@ -1,3 +1,6 @@
+Making a fully working online store for card game with Angular 4 and Bootstrap 4.
+GIT Pages: https://petar11199.github.io/game-store/
+
 # Routing
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
