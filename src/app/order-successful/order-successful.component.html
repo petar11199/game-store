@@ -1,0 +1,40 @@
+<h2>Order successful!</h2>
+<h4 class="lead">We have received your order</h4>
+
+<div class="container mt-5">
+  <div class="card float-left mr-5 mb-5" style="width: 20rem;">
+    <div class="card-header">
+      {{ user.name }}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><p class="lead">Email: </p>{{ user.email }}</li>
+      <li class="list-group-item"><p class="lead">Adress: </p> {{ user.adress }}</li>
+      <li *ngIf="user.adress2" class="list-group-item"><p class="lead">Address 2: </p>{{ user.adress2 }}</li>
+      <li class="list-group-item"><p class="lead">City: </p>{{ user.city }}</li>
+      <li class="list-group-item"><p class="lead">State: </p>{{ user.state }}</li>
+      <li class="list-group-item"><p class="lead">Zip: </p>{{ user.zip }}</li>
+    </ul>
+  </div>
+
+  <div class="card" style="max-width: 25rem;">
+      <div class="card-header">Order</div>
+      <div class="card-body text-secondary">
+        <h4 class="card-title">{{ product.title }}</h4>
+        <p class="card-text">Price: {{ product.price | currency:'EUR':'symbol'}}</p>
+        <div class="card-text">
+          <p>Quantity: {{ quantity }}</p>         
+        </div>
+        <hr>
+        <p class="card-text font-weight-bold">Total price: {{ product.price * quantity | currency:'EUR':'symbol'}}</p>
+      </div>
+    </div>
+
+  <button class="btn btn-success mt-5" routerLink="/products">Back to store</button>
+  <button class="btn btn-info mt-5">Track your order</button>
+</div>
+
+<div class="container">
+  <div class="row">
+      <p class="text-muted small mt-3">We sent you a email with all the information. If you have any questions, feel free to contact us</p>
+  </div>
+</div>

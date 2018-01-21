@@ -1,0 +1,10 @@
+.lowOpacity{
+    opacity: 0.6;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+.active{
+    opacity: 1;
+}

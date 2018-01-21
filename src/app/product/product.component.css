@@ -1,0 +1,20 @@
+img{
+    max-height: 400px;
+}
+span{
+    margin-left: 10px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 400ms ease;
+}
+span:hover{
+    opacity: 1;
+    transition: 400ms ease;
+    color: rgb(40, 33, 78);
+}
+.col{
+    background: white;
+}
+.btn{
+    cursor: pointer;
+}

@@ -1,0 +1,122 @@
+<form #orderForm="ngForm">
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <div *ngIf="notValid" class="alert alert-primary" role="alert">Add a game to cart first</div>
+      <label for="name">Name</label>
+      <input 
+        required
+        ngModel 
+        #name="ngModel"
+        type="text" 
+        class="form-control" 
+        id="name" 
+        name="name"
+        placeholder="John Smith">
+      <div *ngIf="name.touched && name.invalid" class="alert alert-danger">Name is requred</div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input 
+        required
+        ngModel
+        #email="ngModel"
+        type="email" 
+        class="form-control" 
+        id="email" 
+        name="email" 
+        placeholder="Email">
+        <div *ngIf="email.touched && email.invalid" class="alert alert-danger">Email is requred</div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="password">Password</label>
+      <input 
+        minlength="4"
+        required
+        ngModel 
+        #password="ngModel"
+        type="password" 
+        class="form-control" 
+        id="password" 
+        name="password"
+        placeholder="Password">
+        <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+          <div *ngIf="password.errors.required">Password is requred</div>
+          <div *ngIf="password.errors.minlength">Password should be at least 4 characters</div>
+        </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="adress1">Address</label>
+    <input 
+      required
+      ngModel 
+      #adress="ngModel"
+      type="text" 
+      class="form-control" 
+      id="adress" 
+      name="adress"
+      placeholder="1234 Main St">
+      <div *ngIf="adress.touched && adress.invalid" class="alert alert-danger">Adress is requred</div>
+  </div>
+  <div class="form-group">
+    <label for="adress2">Address 2</label>
+    <input 
+      ngModel
+      #adress2="ngModel"
+      type="text" 
+      class="form-control" 
+      id="adress2" 
+      name="adress2"
+      placeholder="4243 Second St">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="city">City</label>
+      <input 
+        required
+        ngModel 
+        #city="ngModel"
+        type="text" 
+        class="form-control" 
+        id="city" 
+        name="city">
+        <div *ngIf="city.touched && city.invalid" class="alert alert-danger">City is requred</div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="state">State</label>
+      <select 
+        required 
+        ngModel
+        #state="ngModel"
+        class="form-control"
+        id="state" 
+        name="state">
+        <option selected>Serbia</option>
+        <option>France</option>
+        <option>UK</option>
+      </select>
+      <div *ngIf="state.touched && state.invalid" class="alert alert-danger">State is requred</div>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="zip">Zip</label>
+      <input 
+        required
+        ngModel 
+        #zip="ngModel"
+        type="text" 
+        class="form-control" 
+        id="zip" 
+        name="zip">
+      <div *ngIf="zip.touched && zip.invalid" class="alert alert-danger">
+        <div *ngIf="zip.errors.required">Zip is requred</div>
+      </div>
+    </div>
+  </div>
+  <button 
+    [disabled]="orderForm.invalid || notValid" 
+    (click)="orderSuccessful(orderForm)"
+    [routerLink]="['/order-successful', product.id]"
+    type="submit" 
+    class="btn btn-success float-right btn-lg">Purchase
+  </button>
+</form>
