@@ -3,8 +3,8 @@
   <button (click)="dropDown()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div *ngIf="dropDownActive" class="navbar-collapse" id="navbarsExampleDefault">
+  
+  <div *ngIf="!dropDownActive" class="navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/home" >Home <span class="sr-only">(current)</span></a>
